@@ -1,0 +1,30 @@
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2387
+"GET /home HTTP/1.1" 301 0
+"GET /home/ HTTP/1.1" 200 300
+Not Found: /abaut/
+"GET /abaut/ HTTP/1.1" 404 2423
+"GET /about/ HTTP/1.1" 200 441
+/Users/andrewbullette/PycharmProjects/Djamgo/DZ/DZ/settings.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /
+"GET / HTTP/1.1" 404 2387
+/Users/andrewbullette/PycharmProjects/Djamgo/DZ/DZ/settings.py changed, reloading.
+INFO 2023-10-03 14:35:55,892 autoreload 7942 140704616846144 Watching for file changes with StatReloader
+WARNING 2023-10-03 14:37:03,766 log 7942 123145542152192 Not Found: /
+WARNING 2023-10-03 14:37:03,767 basehttp 7942 123145542152192 "GET / HTTP/1.1" 404 2387
+INFO 2023-10-03 14:37:04,283 autoreload 7942 140704616846144 /Users/andrewbullette/PycharmProjects/Djamgo/DZ/DZ1app/urls.py changed, reloading.
+INFO 2023-10-03 14:37:04,676 autoreload 7964 140704616846144 Watching for file changes with StatReloader
+INFO 2023-10-03 14:37:05,117 basehttp 7964 123145582612480 "GET / HTTP/1.1" 200 300
+INFO 2023-10-03 14:37:40,735 basehttp 7964 123145582612480 "GET / HTTP/1.1" 200 300
+INFO 2023-10-03 14:37:41,516 autoreload 7964 140704616846144 /Users/andrewbullette/PycharmProjects/Djamgo/DZ/DZ1app/urls.py changed, reloading.
+INFO 2023-10-03 14:37:42,375 autoreload 7979 140704616846144 Watching for file changes with StatReloader
+INFO 2023-10-03 14:37:45,852 basehttp 7979 123145378869248 "GET / HTTP/1.1" 200 300
+WARNING 2023-10-03 14:37:49,329 log 7979 123145378869248 Not Found: /home/
+WARNING 2023-10-03 14:37:49,330 basehttp 7979 123145378869248 "GET /home/ HTTP/1.1" 404 2579
+WARNING 2023-10-03 14:37:55,730 log 7979 123145378869248 Not Found: /home/
+WARNING 2023-10-03 14:37:55,731 basehttp 7979 123145378869248 "GET /home/ HTTP/1.1" 404 2579
+INFO 2023-10-03 14:38:04,560 basehttp 7979 123145378869248 "GET / HTTP/1.1" 200 300
+INFO 2023-10-03 14:40:11,116 autoreload 7979 140704616846144 /Users/andrewbullette/PycharmProjects/Djamgo/DZ/DZ1app/urls.py changed, reloading.
+INFO 2023-10-03 14:40:11,752 autoreload 8013 140704616846144 Watching for file changes with StatReloader

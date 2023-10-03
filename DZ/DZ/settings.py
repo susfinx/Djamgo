@@ -126,13 +126,13 @@ LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'formatters': {
-'verbose': {
-'format': '{levelname} {asctime} {module} {process} {thread} {message}',
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process} {thread} {message}',
             'style': '{',
         },
         'simple': {
             'format': '%(levelname)s %(message)s'
-        }
+        },
     },
     'handlers': {
         'console': {
@@ -150,10 +150,5 @@ LOGGING = {
             'handlers': ['console', 'file'],
             'level': 'INFO',
         },
-        'myapp': {
-            'handlers': ['console', 'file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
     },
-},
+}

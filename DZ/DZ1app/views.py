@@ -1,10 +1,8 @@
 from django.http import HttpResponse
 import logging
 
-# Настройка логирования
 logger = logging.getLogger(__name__)
 
-# Представление для главной страницы
 def home(request):
     html = """
     <html>
@@ -17,11 +15,9 @@ def home(request):
     </body>
     </html>
     """
-    # Логирование данных о посещении страницы
     logger.info("Главная страница посещена")
     return HttpResponse(html)
 
-# Представление "О себе"
 def about(request):
     html = """
     <html>
@@ -30,12 +26,11 @@ def about(request):
     </head>
     <body>
         <h1>Обо мне</h1>
-        <p>Привет, меня зовут [Ваше имя]. Я начинающий веб-разработчик и создал этот сайт с использованием Django.</p>
+        <p>Привет, меня зовут ROMA. Я начинающий веб-разработчик и создал этот сайт с использованием Django.</p>
         <p>Здесь вы можете узнать больше о моих навыках и проектах.</p>
     </body>
     </html>
     """
-    # Логирование данных о посещении страницы
+
     logger.info("Страница 'О себе' посещена")
     return HttpResponse(html)
-
