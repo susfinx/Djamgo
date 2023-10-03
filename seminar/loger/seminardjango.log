@@ -1,0 +1,16 @@
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 12
+"GET / HTTP/1.1" 200 12
+"GET /5/tre/ HTTP/1.1" 200 37
+"GET /5/two/ HTTP/1.1" 200 19
+/Users/andrewbullette/PycharmProjects/Djamgo/seminar/seminar/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/andrewbullette/PycharmProjects/Djamgo/seminar/seminar/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/andrewbullette/PycharmProjects/Djamgo/seminar/seminar/settings.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/andrewbullette/PycharmProjects/Djamgo/seminar/seminar/settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /5/tre/ HTTP/1.1" 200 37
+"GET /5/tre/ HTTP/1.1" 200 37
+"GET /5/one/ HTTP/1.1" 200 4
