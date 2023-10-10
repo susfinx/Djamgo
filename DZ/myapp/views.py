@@ -3,6 +3,31 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import Client, Product, Order
 from .forms import ClientForm, ProductForm, OrderForm
 from django.http import HttpResponse
+from django.shortcuts import render
+from django.utils import timezone
+from .models import Order
+
+def order_list(request):
+
+    last_week_orders = Order.objects.filter(
+        date_ordered__gte=timezone.now() - timezone.timedelta(days=7)
+    )
+
+    last_month_orders = Order.objects.filter(
+        date_ordered__gte=timezone.now() - timezone.timedelta(days=30)
+    )
+
+    last_year_orders = Order.objects.filter(
+        date_ordered__gte=timezone.now() - timezone.timedelta(days=365)
+    )
+
+    context = {
+        'last_week_orders': last_week_orders,
+        'last_month_orders': last_month_orders,
+        'last_year_orders': last_year_orders,
+    }
+
+    return render(request, 'order_list.html', context)
 
 
 class ClientListView(ListView):

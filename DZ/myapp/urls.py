@@ -16,9 +16,8 @@ urlpatterns = [
     path('products/<int:pk>/delete/', views.ProductDeleteView.as_view(), name='product-delete'),
 
     # URL-маршруты для заказов
-    path('orders/', views.OrderListView.as_view(), name='order-list'),
-    path('orders/<int:pk>/', views.OrderDetailView.as_view(), name='order-detail'),
-    path('orders/create/', views.OrderCreateView.as_view(), name='order-create'),
-    path('orders/<int:pk>/update/', views.OrderUpdateView.as_view(), name='order-update'),
-    path('orders/<int:pk>/delete/', views.OrderDeleteView.as_view(), name='order-delete'),
+    path('orders/', views.OrderListView.as_view(), name='order_list'),
+    path('orders/<int:pk>/', views.OrderDetailView.as_view(), name='order_detail'),
+    path('orders/create/', views.OrderCreateView.as_view(), name='order_create'),
+    path('orders/<int:pk>/update/', views.OrderUpdateView.as_view(), name='order_update'),
 ]
