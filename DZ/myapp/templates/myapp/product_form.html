@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<form action="" method="post" enctype="multipart/form-data">
+    <h2>Загрузите Tovar</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+    <input type="submit" value="Отправить">
+    </form>
+{% endblock %}

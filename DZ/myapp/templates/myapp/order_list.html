@@ -1,9 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Список заказов</title>
-</head>
-<body>
+{% extends 'myapp/base.html' %}
+{% block title %}Spisok Zakazov{% endblock %}
+{% block content %}
+    <h1>Заказы за последние 7 дней</h1>
+    <ul>
+        {% for order in last_week_orders %}
+            <li>{{ order.date_ordered }}: {{ order.customer.name }}</li>
+            <ul>
+                {% for item in order.items.all %}
+                    <li>{{ item.product.name }} - {{ item.quantity }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
     <h1>Заказы за последние 7 дней</h1>
     <ul>
         {% for order in last_week_orders %}
@@ -17,9 +24,26 @@
     </ul>
 
     <h1>Заказы за последние 30 дней</h1>
-    <!-- Аналогичный код для заказов за 30 дней -->
+    <ul>
+        {% for order in last_week_orders %}
+            <li>{{ order.date_ordered }}: {{ order.customer.name }}</li>
+            <ul>
+                {% for item in order.items.all %}
+                    <li>{{ item.product.name }} - {{ item.quantity }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
 
     <h1>Заказы за последние 365 дней</h1>
-    <!-- Аналогичный код для заказов за 365 дней -->
-</body>
-</html>
+    <ul>
+        {% for order in last_week_orders %}
+            <li>{{ order.date_ordered }}: {{ order.customer.name }}</li>
+            <ul>
+                {% for item in order.items.all %}
+                    <li>{{ item.product.name }} - {{ item.quantity }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+{% endblock %}
