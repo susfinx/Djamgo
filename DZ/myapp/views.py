@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Client, Product, Order
-from .forms import ClientForm, ProductForm
+from .forms import ClientForm, ProductForm, OrderForm
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Order
@@ -104,6 +104,19 @@ class ProductUpdateView(UpdateView):
 class ProductDeleteView(DeleteView):
     model = Product
     success_url = '/products/'
+
+class OrderListView(ListView):
+    model = Order
+    template_name = 'myapp/order_list.html'
+    context_object_name = 'orders'
+
+class OrderDetailView(DetailView):
+    model = Order
+    template_name = 'myapp/order_detail.html'
+
+class OrderCreateView(CreateView):
+    model = Order
+    form_class = OrderForm
 
 
 

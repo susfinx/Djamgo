@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Cients</title>
-</head>
-<body>
-    <h1>Hello, {{ Clients }}!</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+<h1>Список клиентов</h1>
+<ul>
+  {% for client in clients %}
+    <li><a href="{% url 'client_detail' client.id %}">{{ client.name }}</a></li>
+  {% endfor %}
+</ul>
+
+<!-- customer_detail.html -->
+<h1>Информация о клиенте: {{ customer.name }}</h1>
+<p>Email: {{ client.email }}</p>
+<!-- Другие поля клиента -->
+{% endblock %}
+
+
+
+

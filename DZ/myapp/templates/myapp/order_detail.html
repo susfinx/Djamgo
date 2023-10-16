@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Order  {{ order.id}} </h1>
+<!-- customer_detail.html -->
+<h1>Информация о Zakaze: {{ order.id }}</h1>
+<p>products: {{ order.products }}</p>
+<p>order_date: {{ order.order_date }}</p>
+<p>client: {{ order.client }}</p>
+<!-- Другие поля клиента -->
+{% endblock %}

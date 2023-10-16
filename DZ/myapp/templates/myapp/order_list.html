@@ -1,49 +1,48 @@
-{% extends 'myapp/base.html' %}
-{% block title %}Spisok Zakazov{% endblock %}
+{% extends 'base.html' %}
+
+{% block title %}Список Заказов{% endblock %}
+
 {% block content %}
-    <h1>Заказы за последние 7 дней</h1>
-    <ul>
-        {% for order in last_week_orders %}
-            <li>{{ order.date_ordered }}: {{ order.customer.name }}</li>
-            <ul>
-                {% for item in order.items.all %}
-                    <li>{{ item.product.name }} - {{ item.quantity }}</li>
-                {% endfor %}
-            </ul>
-        {% endfor %}
-    <h1>Заказы за последние 7 дней</h1>
-    <ul>
-        {% for order in last_week_orders %}
-            <li>{{ order.date_ordered }}: {{ order.customer.name }}</li>
-            <ul>
-                {% for item in order.items.all %}
-                    <li>{{ item.product.name }} - {{ item.quantity }}</li>
-                {% endfor %}
-            </ul>
-        {% endfor %}
-    </ul>
+<h1>Список заказов</h1>
+<ul>
+  {% for order in orders %}
+    <li><a href="{% url 'order_detail' order.pk %}">{{ order.id }}</a></li>
+  {% endfor %}
+</ul>
 
-    <h1>Заказы за последние 30 дней</h1>
+<h1>Заказы за последние 7 дней</h1>
+<ul>
+  {% for order in last_week_orders %}
+    <li>{{ order.date_ordered }}: {{ order.client.name }}</li>
     <ul>
-        {% for order in last_week_orders %}
-            <li>{{ order.date_ordered }}: {{ order.customer.name }}</li>
-            <ul>
-                {% for item in order.items.all %}
-                    <li>{{ item.product.name }} - {{ item.quantity }}</li>
-                {% endfor %}
-            </ul>
-        {% endfor %}
+      {% for item in order.items.all %}
+        <li>{{ item.product.name }} - {{ item.quantity }}</li>
+      {% endfor %}
     </ul>
+  {% endfor %}
+</ul>
 
-    <h1>Заказы за последние 365 дней</h1>
+<h1>Заказы за последние 30 дней</h1>
+<ul>
+  {% for order in last_month_orders %}
+    <li>{{ order.date_ordered }}: {{ order.client.name }}</li>
     <ul>
-        {% for order in last_week_orders %}
-            <li>{{ order.date_ordered }}: {{ order.customer.name }}</li>
-            <ul>
-                {% for item in order.items.all %}
-                    <li>{{ item.product.name }} - {{ item.quantity }}</li>
-                {% endfor %}
-            </ul>
-        {% endfor %}
+      {% for item in order.items.all %}
+        <li>{{ item.product.name }} - {{ item.quantity }}</li>
+      {% endfor %}
     </ul>
+  {% endfor %}
+</ul>
+
+<h1>Заказы за последние 365 дней</h1>
+<ul>
+  {% for order in last_year_orders %}
+    <li>{{ order.date_ordered }}: {{ order.client.name }}</li>
+    <ul>
+      {% for item in order.items.all %}
+        <li>{{ item.product.name }} - {{ item.quantity }}</li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</ul>
 {% endblock %}

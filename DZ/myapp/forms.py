@@ -1,5 +1,5 @@
 from django import forms
-from .models import Product, Client
+from .models import Product, Client, Order
 
 class ClientForm(forms.ModelForm):
 
@@ -10,9 +10,9 @@ class ClientForm(forms.ModelForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ('name', 'description', 'price', 'quantity','image')
+        fields = ['name', 'description', 'price', 'quantity']
 
-# class OrderForm(forms.ModelForm):
-#    class Meta:
-#        model = Order()
-#        fields = ['client', 'products', 'total_amount']
+class OrderForm(forms.ModelForm):
+    class Meta:
+        model = Order  # Удалите () после Order
+        fields = ('client', 'products', 'total_amount')
