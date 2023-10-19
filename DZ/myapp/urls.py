@@ -1,7 +1,9 @@
 from django.urls import path
 from . import views
 urlpatterns = [
-    # URL-маршруты для клиентов
+
+    path('', views.index, name='index'),
+
     path('clients/', views.ClientListView.as_view(), name='client_list'),
     path('clients/<int:pk>/', views.ClientDetailView.as_view(), name='client_detail'),
     path('clients/create/', views.client_form, name='client_form'),

@@ -118,6 +118,9 @@ class OrderCreateView(CreateView):
     model = Order
     form_class = OrderForm
 
+def index (request):
+    return render(request,'myapp/index.html')
+
 
 
 
