@@ -26,9 +26,13 @@ SECRET_KEY = os.getenv('SECRET_KEY')#'django-insecure-cpp6q!o07#+n10axf*q6o*-+72
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    'sfinx.pythonanywhere.com',
+    'sfinxy.pythonanywhere.com',
 ]
 
 
@@ -44,7 +48,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
-    'debug_toolbar',
 ]
 
 
@@ -88,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sfinx$default',
         'USER': '<sfinx>',
-        'PASSWORD': os.getenv('q9w8e7r6'),
+        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
         'HOST': '<https://www.pythonanywhere.com/user/sfinx/consoles/30738863/>',
         'OPTIONS': {'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
                     'charset': 'utf8mb4',
@@ -141,7 +144,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
 
